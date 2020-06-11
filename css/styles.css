@@ -782,8 +782,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image-portfolio {
-  display: inline-block;
-  width: 370px;
+    width: 370px;
 }
 
 
