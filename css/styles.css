@@ -324,6 +324,7 @@ background-size: cover;
   align-content: center;
   text-align: center;  
   margin-bottom: 50px; 
+  
 }
 
 
@@ -439,6 +440,8 @@ justify-content: center;
    margin-right: 30px;
    width: calc((100% - 60px) / 3);
    display: block;
+   /* вертикальный паддинг по макету (27px). */
+  
    
  }
  
@@ -505,21 +508,24 @@ justify-content: center;
   .social-list .social-item:not(:last-child) {
     margin-right: 10px;
 }
-.social-item:hover
+/* .social-item:hover
 {fill: var(--main-bg-color);
-  background-color: var(--hover-focus-color);
-  border-radius: 44px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
+ 
 }
 
 .social-item:focus 
 { fill: var(--main-bg-color);
   background-color: var(--hover-focus-color);
   border-radius: 44px;
+  
+  
+} */
+
+/* .social-item {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
-}
+} */
 
 
 
@@ -562,7 +568,7 @@ h3 {
 .portfolio-item:focus .content-text,
 .portfolio-item:hover .content-text{
     transform: translateY(0%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .content-text {
@@ -597,7 +603,7 @@ h3 {
 .filter-button:focus {
   font-family: Roboto;
   background-color: var(--hover-focus-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
  
 }
 
@@ -617,6 +623,7 @@ h3 {
   border-radius: 4px;
   border: 1px solid transparent;
   padding: 6px 22px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
  
 }
@@ -700,7 +707,8 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 0px 0px 4px 4px;
   height: 70px;
   line-height: 1.1;
-  padding-top: 35px;
+  padding-bottom: 27px;
+  padding-top: 27px;
 
   margin: 0px;
   position: absolute;
@@ -744,7 +752,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .blue-text:hover {
   background-color: var(--hover-focus-color);
   line-height: 1.55;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ 
   
 }
 
@@ -754,6 +762,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 .blue-text {
   margin:0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   
  
@@ -773,6 +782,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
   
   overflow: hidden;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -793,10 +803,12 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 0;
 }
 .portfolio-heading {
-  padding-left: 24px;
-  padding-top: 20px;
-  padding-right: 24px;
   margin-bottom: 4px;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  line-height: 2;
+  font-style: normal;
+  white-space: nowrap;
 }
 
 .portfolio-item:hover {
@@ -804,11 +816,15 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition:  box-shadow  250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.port-text {
-  padding-right: 24px;
-  padding-left: 24px;
-  padding-bottom: 20px;
-}
+ .port-text {
+ font-size: 16px;
+line-height: 30px;
+
+
+letter-spacing: 0.03em;
+} 
+
+
 /* Footer */
 footer {
   background-color: var(--footer-bg-color);
@@ -897,9 +913,7 @@ footer {
 }
 
 .footer-item {
-  fill: var(--main-bg-color);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -942,15 +956,28 @@ footer {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    fill: var(--main-bg-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+    
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
- .social-option:hover,
- .social-option:focus {
+ .social-option:hover
+  {
   color: var(--main-bg-color);
-  background-color: var(--hover-focus-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  background-color: var(--hover-focus-color);}
+  
+  
+  
   
 
+
+.social-option:focus {
+  color: var(--main-bg-color);
+  border-radius: 50%;
+  background-color: var(--hover-focus-color);
 }
 
 
@@ -964,6 +991,9 @@ footer {
 }
 
 
+.social-option:focus .icon-social{
+  --color5: #ffffff; }
+
 .company-logo {
   --color5: #AFB1B8;
 
@@ -975,7 +1005,9 @@ cursor: pointer;
 
 }
 
-
+.logo-first:focus .company-logo{
+  --color5: var(--hover-focus-color);
+  cursor: pointer;}
 
 .client-item:hover {
   border: 1px solid  var(--hover-focus-color);
@@ -983,6 +1015,7 @@ cursor: pointer;
  
 
 }
+
 
 .client-item:focus {
   border: 1px solid  var(--hover-focus-color);
